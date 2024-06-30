@@ -17,3 +17,19 @@
     text-align: center;
     align-items: center;
 }
+
+.cell {
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.status {
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}

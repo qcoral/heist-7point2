@@ -67,3 +67,10 @@ input[name="name"] {
     padding-right: 5px;
     margin: 5px;
 }
+
+input[name="room"] {
+    color: #0a4260; 
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+}

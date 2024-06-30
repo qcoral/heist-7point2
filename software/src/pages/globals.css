@@ -7,3 +7,13 @@
     color: white;
     font-family: 'Inter', sans-serif;
 }
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}

@@ -4,13 +4,29 @@
 
 :root {
     background-color: black;
-    color: white;
+    color: aquamarine;
     font-family: 'Inter', sans-serif;
 }
 
 .title {
     font-size: 2rem;
     font-weight: 600;
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.status {
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.cel {
     margin: 1rem;
     justify-content: center;
     display: flex;
@@ -26,10 +42,14 @@
     align-items: center;
 }
 
-.status {
-    margin: 1rem;
+.cell button{
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
     justify-content: center;
     display: flex;
     text-align: center;
     align-items: center;
+    border: 3px solid aquamarine;
+    border-radius: 5px;
 }

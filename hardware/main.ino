@@ -46,16 +46,14 @@ void parseJsonData(int index)
     // Parse response
     DynamicJsonDocument doc(2048);
     deserializeJson(doc, http.getStream());
-
-    String messagefrag = doc[index]
-
-    // Disconnect
     http.end();
 
-    displayData(index)
+    String messagefrag = doc[index]; // fix this to deserialize the json properly
+
+    displayData(messagefrag); // displays message
 }
 
-void interface()
+void interface() // button controls, refreshes data on change; might want to add async periodic updates thought
 {
     if (prev)
     {

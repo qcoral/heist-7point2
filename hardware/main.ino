@@ -28,9 +28,13 @@ WiFiClient client;
 
 void displayData(String message)
 {
-    display.clear();
-    //the rest of the code here displays the message
-    
+    display.clearDisplay();
+    display.display();
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0, 0);
+    display.setTextSize(1);
+    display.println(message);
+    display.display();
 }
 
 void parseJsonData(int index)
@@ -48,7 +52,7 @@ void parseJsonData(int index)
     deserializeJson(doc, http.getStream());
     http.end();
 
-    String messagefrag = doc[index]; // fix this to deserialize the json properly
+    String messagefrag = doc[index]; // fix this to deserialize the json properly!!!
 
     displayData(messagefrag); // displays message
 }
@@ -75,8 +79,8 @@ void interface() // button controls, refreshes data on change; might want to add
 
 void setup()
 {
-    pinMode(prev, INPUT);
-    pinMode(next, INPUT);
+    pinMode(prev, INPUT_PULLUP);
+    pinMode(next, INPUT_PULLIP);
     parseJsonData(index);
 }
 

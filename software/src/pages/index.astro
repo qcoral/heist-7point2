@@ -1,13 +1,17 @@
 ---
 import "./globals.css";
 
+let chatMessages = [];
+
 if (Astro.request.method === "POST") {
   try {
     const data = await Astro.request.formData();
     const name = data.get("name");
     const room = data.get("room");
     const message = data.get("message");
-    // Do something with the data
+    
+	chatMessages.push({ name, room, message });
+
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
@@ -34,23 +38,34 @@ if (Astro.request.method === "POST") {
 		<div>
 			
 			<form method="POST">
-			<label class="cel">
-				name:
-				<input type="text" name="name" required />
-			</label>
-			<label class="cel">
-				room #:
-				<input type="text" name="room" />
-			</label>
-			<label class="cel">
-				message:
-				<input type="text" name="message" required maxlength="20" />
-			</label>
-			<div class="cell">
-				<button>submit</button>
-			</div>
-			
+				<label class="cel">
+					name:
+					<input type="text" name="name" required />
+				</label>
+				<label class="cel">
+					room #:
+					<input type="text" name="room" />
+				</label>
+				<label class="cel">
+					message:
+					<input type="text" name="message" required maxlength="20" />
+				</label>
+				<div class="cell">
+					<button>submit</button>
+				</div>
 			</form>
+
+
+			<div class="chat-messages">
+				{chatMessages.map((message) => (
+				  <div class="chat-message">
+					<strong>{message.name}</strong>: {message.message}
+				  </div>
+				))}
+			</div>
+
+
+
 		</div>
 		
 	</body>

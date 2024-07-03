@@ -27,7 +27,7 @@ try {
 
   <h1 class="cel">quick! who are you and what are you up to?</h1>
   <div>
-    <form method="POST">
+    <form id="chatForm">
       <label class="cel">
         name:
         <input type="text" name="name" required />
@@ -53,5 +53,37 @@ try {
       ))}
     </div>
   </div>
+
+  <script>
+    document.getElementById('chatForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+			alert("submitting");
+      const formData = new FormData(event.target);
+      const data = {
+        name: formData.get('name'),
+        room_num: formData.get('room'),
+        message: formData.get('message')
+      };
+
+      try {
+        const response = await fetch('https://heist.iunstable0.com/post', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        // Optionally, handle the response here
+        console.log('Message sent successfully');
+      } catch (error) {
+        console.error('Error sending message:', error);
+      }
+    });
+  </script>
 </body>
 </html>

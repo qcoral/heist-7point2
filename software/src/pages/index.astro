@@ -46,7 +46,7 @@ try {
     </form>
 
     <div class="chat-messages">
-      {chatMessages.map((msg) => (
+      {chatMessages.map((msg: any) => (
         <div class="chat-message">
           <strong>{msg.name}: {msg.room_num}</strong>: {msg.message}
         </div>
@@ -55,11 +55,11 @@ try {
   </div>
 
   <script>
-    document.getElementById('chatForm').addEventListener('submit', async function(event) {
+    document.getElementById('chatForm')?.addEventListener('submit', async function(event: any) {
       event.preventDefault();
 			alert("submitting");
-      const formData = new FormData(event.target);
-      const data = {
+				const formData = new FormData(event.target);
+				const data = {
         name: formData.get('name'),
         room_num: formData.get('room'),
         message: formData.get('message')

@@ -1,0 +1,86 @@
+:root {
+	background-color: black;
+	color: aquamarine;
+	font-family: "Inter", sans-serif;
+}
+
+.title {
+	font-size: 2rem;
+	font-weight: 600;
+	margin: 1rem;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+	align-items: center;
+}
+
+.status {
+	margin: 1rem;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+	align-items: center;
+}
+
+.cel {
+	margin: 1rem;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+	align-items: center;
+}
+
+.cell {
+	margin: 1rem;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+	align-items: center;
+}
+
+.cell button {
+	padding: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	justify-content: center;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	border: 3px solid aquamarine;
+	border-radius: 5px;
+}
+
+input[name="message"] {
+	color: #0a4260;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 5px;
+}
+
+input[name="name"] {
+	color: #0a4260;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 5px;
+}
+
+input[name="room"] {
+	color: #0a4260;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 5px;
+}
+
+.chat-messages {
+	margin: 20px;
+	padding: 10px;
+	background-color: aquamarine;
+	border-radius: 8px;
+}
+
+.chat-message {
+	margin-bottom: 10px;
+	padding: 8px;
+	background-color: black;
+	border-radius: 4px;
+}
